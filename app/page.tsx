@@ -17,16 +17,12 @@ import {
   SiTailwindcss,
   SiFastapi,
   SiPostgresql,
-  SiAws,
   SiDocker,
   SiJenkins,
   SiGit,
   SiGithub,
   SiVercel,
-  SiVisualstudio,
   SiAndroidstudio,
-  SiCanva,
-  SiCapcut,
 } from "react-icons/si";
 
 export default function Home() {
