@@ -607,7 +607,8 @@ useEffect(() => {
             <span>•</span>
             <span>Web</span>
             <span>•</span>
-            <span>Smart Agriculture</span>
+            <span>Smart 
+              Agriculture</span>
           </div>
 
         </div>
