@@ -33,7 +33,34 @@ export default function Home() {
   const homeRef = useRef<HTMLElement | null>(null);
 
   const [typedFirstName, setTypedFirstName] = useState("");
-const [typedLastName, setTypedLastName] = useState("");
+  const [typedLastName, setTypedLastName] = useState("");
+  const [result, setResult] = useState("");
+  
+const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  const formData = new FormData(form);
+
+  formData.append(
+    "access_key",
+    process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || ""
+  );
+
+  const response = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    body: formData,
+  });
+
+  const data = await response.json();
+
+  if (data.success) {
+    setResult("Message sent successfully!");
+    form.reset();
+  } else {
+    setResult("Something went wrong. Please try again.");
+  }
+};
 
 useEffect(() => {
   const firstName = "Ranjana";
@@ -451,24 +478,98 @@ useEffect(() => {
                 PAGE 3 — FULL STACK DEVELOPMENT
             ========================== */}
             <section
-              id="full-stack-development"
-              className="relative flex min-h-screen scroll-mt-0 items-center overflow-hidden bg-black px-6 py-32 lg:px-16"
-            >
+  id="full-stack-development"
+  className="relative flex min-h-screen scroll-mt-0 items-center overflow-hidden bg-black px-6 py-32 lg:px-16"
+>
+  <div className="w-full max-w-6xl">
 
-              <div className="w-full max-w-6xl">
+    <h2 className="mt-4 text-4xl font-bold text-white md:text-6xl">
+      Building from frontend to backend.
+    </h2>
 
-                <h2 className="mt-4 text-4xl font-bold text-white md:text-6xl">
-                    Building from frontend to backend.
-                </h2>
+    <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-400">
+      I build complete digital experiences by connecting intuitive interfaces,
+      powerful backend systems, databases, APIs, and AI-driven functionality.
+    </p>
 
-                <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-400">
-                  A collection of my full-stack development experience,
-                  technologies, and the applications I build.
-                </p>
+    {/* Stats */}
+    <div className="mt-14 grid max-w-3xl grid-cols-2 gap-4 md:grid-cols-4">
 
-              </div>
+      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-purple-400/40">
+        <div className="text-4xl font-bold text-white">1+</div>
+        <p className="mt-2 text-sm text-gray-400">
+          Year Experience
+        </p>
+      </div>
 
-            </section>
+      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-purple-400/40">
+        <div className="text-4xl font-bold text-white">4+</div>
+        <p className="mt-2 text-sm text-gray-400">
+          Projects Built
+        </p>
+      </div>
+
+      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-purple-400/40">
+        <div className="text-4xl font-bold text-white">AI</div>
+        <p className="mt-2 text-sm text-gray-400">
+          Intelligent Solutions
+        </p>
+      </div>
+
+      <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-purple-400/40">
+        <div className="text-4xl font-bold text-white">E2E</div>
+        <p className="mt-2 text-sm text-gray-400">
+          Development
+        </p>
+      </div>
+
+    </div>
+
+    {/* Development flow */}
+    <div className="mt-16">
+      <p className="mb-6 text-sm uppercase tracking-[0.25em] text-gray-500">
+        How I Build
+      </p>
+
+      <div className="flex flex-wrap items-center gap-3 text-sm text-gray-300">
+        <span className="rounded-full border border-white/10 bg-white/[0.03] px-5 py-3">
+          Idea
+        </span>
+
+        <span className="text-purple-400">→</span>
+
+        <span className="rounded-full border border-white/10 bg-white/[0.03] px-5 py-3">
+          Design
+        </span>
+
+        <span className="text-purple-400">→</span>
+
+        <span className="rounded-full border border-white/10 bg-white/[0.03] px-5 py-3">
+          Develop
+        </span>
+
+        <span className="text-purple-400">→</span>
+
+        <span className="rounded-full border border-white/10 bg-white/[0.03] px-5 py-3">
+          Integrate
+        </span>
+
+        <span className="text-purple-400">→</span>
+
+        <span className="rounded-full border border-white/10 bg-white/[0.03] px-5 py-3">
+          Test
+        </span>
+
+        <span className="text-purple-400">→</span>
+
+        <span className="rounded-full border border-white/10 bg-white/[0.03] px-5 py-3">
+          Deploy
+        </span>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
             {/* =========================
@@ -607,8 +708,7 @@ useEffect(() => {
             <span>•</span>
             <span>Web</span>
             <span>•</span>
-            <span>Smart 
-              Agriculture</span>
+            <span>Smart Agriculture</span>
           </div>
 
         </div>
@@ -1028,173 +1128,352 @@ useEffect(() => {
                 PAGE 7 — ACHIEVEMENTS
             ========================== */}
             <section
-              id="achievements"
-              className="relative flex min-h-screen scroll-mt-0 items-center overflow-hidden bg-black px-6 py-32 lg:px-16"
-            >
+  id="achievements"
+  className="relative flex min-h-screen scroll-mt-0 items-center overflow-hidden bg-black px-6 py-32 lg:px-16"
+>
+  <div className="w-full max-w-6xl">
+    <h2 className="mt-4 text-4xl font-bold text-white md:text-6xl">
+      Milestones & achievements.
+    </h2>
 
-              <div className="w-full max-w-6xl">
-                <h2 className="mt-4 text-4xl font-bold text-white md:text-6xl">
-                  Milestones & achievements.
-                </h2>
+    <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-400">
+      A collection of my certifications, competitions, leadership
+      experiences, internships, and other milestones.
+    </p>
 
-                <p className="mt-6 max-w-2xl text-lg leading-8 text-gray-400">
-                  A collection of my certifications, competitions, leadership
-                  experiences, internships, and other milestones.
-                </p>
+    {/* Certificates */}
+    <div className="mt-16 grid gap-8 md:grid-cols-2">
 
-              </div>
+      {/* NPTEL */}
+      <div className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-purple-400/40">
+        <a
+          href="/projects/Nptel-SoftSkills.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative block h-56 overflow-hidden bg-black"
+        >
+          <img
+            src="/projects/Nptel-SoftSkills.png"
+            alt="NPTEL Soft Skills Development Certificate"
+            className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
+          />
 
-            </section>
+          <div className="absolute inset-0 flex items-end justify-center bg-black/0 pb-5 transition-all duration-300 group-hover:bg-black/50">
+            <span className="translate-y-4 rounded-full border border-purple-400/40 bg-purple-500/20 px-6 py-3 text-sm font-medium text-white opacity-0 backdrop-blur-md transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+              View Certificate
+            </span>
+          </div>
+        </a>
+
+        <div className="p-6">
+          <h3 className="text-lg font-semibold text-white">
+            NPTEL – Soft Skills Development
+          </h3>
+
+          <p className="mt-2 text-sm text-gray-400">
+            NPTEL Certification
+          </p>
+        </div>
+      </div>
+
+      {/* AWS S3 */}
+      <div className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-purple-400/40">
+        <a
+          href="/projects/Aws-S3.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative block h-56 overflow-hidden bg-black"
+        >
+          <img
+            src="/projects/Aws-S3.png"
+            alt="AWS S3 Certificate"
+            className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
+          />
+
+          <div className="absolute inset-0 flex items-end justify-center bg-black/0 pb-5 transition-all duration-300 group-hover:bg-black/50">
+            <span className="translate-y-4 rounded-full border border-purple-400/40 bg-purple-500/20 px-6 py-3 text-sm font-medium text-white opacity-0 backdrop-blur-md transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+              View Certificate
+            </span>
+          </div>
+        </a>
+
+        <div className="p-6">
+          <h3 className="text-lg font-semibold text-white">
+            AWS S3
+          </h3>
+
+          <p className="mt-2 text-sm text-gray-400">
+            AWS Certification
+          </p>
+        </div>
+      </div>
+
+      {/* AWS Lambda */}
+      <div className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-purple-400/40">
+        <a
+          href="/projects/Aws-Lambda.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative block h-56 overflow-hidden bg-black"
+        >
+          <img
+            src="/projects/Aws-Lambda.png"
+            alt="AWS Lambda Certificate"
+            className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
+          />
+
+          <div className="absolute inset-0 flex items-end justify-center bg-black/0 pb-5 transition-all duration-300 group-hover:bg-black/50">
+            <span className="translate-y-4 rounded-full border border-purple-400/40 bg-purple-500/20 px-6 py-3 text-sm font-medium text-white opacity-0 backdrop-blur-md transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+              View Certificate
+            </span>
+          </div>
+        </a>
+
+        <div className="p-6">
+          <h3 className="text-lg font-semibold text-white">
+            AWS Lambda
+          </h3>
+
+          <p className="mt-2 text-sm text-gray-400">
+            AWS Certification
+          </p>
+        </div>
+      </div>
+
+      {/* AWS EC2 */}
+      <div className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-purple-400/40">
+        <a
+          href="/projects/Aws-EC2.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative block h-56 overflow-hidden bg-black"
+        >
+          <img
+            src="/projects/Aws-EC2.png"
+            alt="AWS EC2 Certificate"
+            className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
+          />
+
+          <div className="absolute inset-0 flex items-end justify-center bg-black/0 pb-5 transition-all duration-300 group-hover:bg-black/50">
+            <span className="translate-y-4 rounded-full border border-purple-400/40 bg-purple-500/20 px-6 py-3 text-sm font-medium text-white opacity-0 backdrop-blur-md transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+              View Certificate
+            </span>
+          </div>
+        </a>
+
+        <div className="p-6">
+          <h3 className="text-lg font-semibold text-white">
+            AWS EC2
+          </h3>
+
+          <p className="mt-2 text-sm text-gray-400">
+            AWS Certification
+          </p>
+        </div>
+      </div>
+
+      {/* Cloud Computing 101 */}
+      <div className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-purple-400/40">
+        <a
+          href="/projects/Cloud-Computing-101.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative block h-56 overflow-hidden bg-black"
+        >
+          <img
+            src="/projects/Cloud-Computing-101.png"
+            alt="Cloud Computing 101 Certificate"
+            className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
+          />
+
+          <div className="absolute inset-0 flex items-end justify-center bg-black/0 pb-5 transition-all duration-300 group-hover:bg-black/50">
+            <span className="translate-y-4 rounded-full border border-purple-400/40 bg-purple-500/20 px-6 py-3 text-sm font-medium text-white opacity-0 backdrop-blur-md transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+              View Certificate
+            </span>
+          </div>
+        </a>
+
+        <div className="p-6">
+          <h3 className="text-lg font-semibold text-white">
+            Cloud Computing 101
+          </h3>
+
+          <p className="mt-2 text-sm text-gray-400">
+            Cloud Computing Certification
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 
             {/* =========================
     PAGE 8 — CONTACT
 ========================== */}
 <section
-  id="contact"
-  className="min-h-screen bg-black px-6 py-32"
->
-  <div className="mx-auto max-w-6xl">
+      id="contact"
+      className="min-h-screen bg-black px-6 py-32"
+    >
+      <div className="mx-auto max-w-6xl">
 
-    {/* =========================
-        CONTACT INTRO
-    ========================== */}
-    <div className="mb-20">
+        {/* =========================
+            CONTACT INTRO
+        ========================== */}
+        <div className="mb-20">
 
-      <p className="text-sm uppercase tracking-[0.3em] text-purple-400">
-        Have an Idea?
-      </p>
+          <p className="text-sm uppercase tracking-[0.3em] text-purple-400">
+            Have an Idea?
+          </p>
 
-      <h2 className="mt-5 max-w-4xl text-5xl font-bold leading-[1.05] tracking-tight text-white md:text-7xl">
-        Let's Build
-        <br />
-        <span className="text-gray-400">
-          Something Meaningful.
-        </span>
-      </h2>
+          <h2 className="mt-5 max-w-4xl text-5xl font-bold leading-[1.05] tracking-tight text-white md:text-7xl">
+            Let's Build
+            <br />
+            <span className="text-gray-400">
+              Something Meaningful.
+            </span>
+          </h2>
 
-      <p className="mt-8 max-w-2xl text-lg leading-8 text-gray-400 md:text-xl">
-        Whether you have a digital product in mind, need a technology
-        solution, want to collaborate on a creative idea, or simply
-        want to build something interesting together — let's talk.
-      </p>
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-gray-400 md:text-xl">
+            Whether you have a digital product in mind, need a technology
+            solution, want to collaborate on a creative idea, or simply
+            want to build something interesting together — let's talk.
+          </p>
 
-      {/* Availability */}
-      <div className="mt-10 flex items-center gap-4">
+          {/* Availability */}
+          <div className="mt-10 flex items-center gap-4">
 
-        {/* Glowing dot */}
-        <span className="relative flex h-3 w-3 shrink-0">
-          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-purple-500 opacity-60" />
+            {/* Glowing dot */}
+            <span className="relative flex h-3 w-3 shrink-0">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-purple-500 opacity-60" />
 
-          <span className="relative inline-flex h-3 w-3 rounded-full bg-purple-400 shadow-[0_0_16px_rgba(168,85,247,0.9)]" />
-        </span>
+              <span className="relative inline-flex h-3 w-3 rounded-full bg-purple-400 shadow-[0_0_16px_rgba(168,85,247,0.9)]" />
+            </span>
 
-        {/* Line */}
-        <span className="h-px w-12 bg-gradient-to-r from-purple-400/70 to-white/10" />
+            {/* Line */}
+            <span className="h-px w-12 bg-gradient-to-r from-purple-400/70 to-white/10" />
 
-        <span className="text-sm text-gray-400 md:text-base">
-          Currently available for new projects and collaborations
-        </span>
+            <span className="text-sm text-gray-400 md:text-base">
+              Currently available for new projects and collaborations
+            </span>
+
+          </div>
+
+        </div>
+
+
+        {/* =========================
+            CONTACT LAYOUT
+        ========================== */}
+        <div className="grid gap-16 md:grid-cols-2">
+
+
+          {/* =========================
+              LEFT — CONTACT FORM
+          ========================== */}
+          <div>
+
+            <form
+              onSubmit={onSubmit}
+              className="space-y-7"
+            >
+
+              {/* Name */}
+              <div>
+
+                <label
+                  htmlFor="name"
+                  className="mb-3 block text-sm font-medium uppercase tracking-[0.2em] text-gray-400"
+                >
+                  Name
+                </label>
+
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  placeholder="Your name"
+                  className="w-full border-b border-white/20 bg-transparent px-0 py-4 text-white outline-none transition placeholder:text-gray-600 focus:border-purple-400"
+                />
+
+              </div>
+
+
+              {/* Email */}
+              <div>
+
+                <label
+                  htmlFor="email"
+                  className="mb-3 block text-sm font-medium uppercase tracking-[0.2em] text-gray-400"
+                >
+                  Email
+                </label>
+
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="your@email.com"
+                  className="w-full border-b border-white/20 bg-transparent px-0 py-4 text-white outline-none transition placeholder:text-gray-600 focus:border-purple-400"
+                />
+
+              </div>
+
+
+              {/* Message */}
+              <div>
+
+                <label
+                  htmlFor="message"
+                  className="mb-3 block text-sm font-medium uppercase tracking-[0.2em] text-gray-400"
+                >
+                  Message
+                </label>
+
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={5}
+                  required
+                  placeholder="Tell me about your project..."
+                  className="w-full resize-none border-b border-white/20 bg-transparent px-0 py-4 text-white outline-none transition placeholder:text-gray-600 focus:border-purple-400"
+                />
+
+              </div>
+
+
+              {/* Send button */}
+              <button
+                type="submit"
+                className="mt-4 rounded-full bg-white px-8 py-4 text-sm font-medium text-black transition hover:-translate-y-1 hover:bg-purple-400"
+              >
+                Send Message
+              </button>
+
+
+              {/* Result message */}
+              {result && (
+                <p className="mt-4 text-sm text-purple-300">
+                  {result}
+                </p>
+              )}
+
+            </form>
+
+          </div>
+
+
+          {/* =========================
+              RIGHT — SOCIAL LINKS
+          ========================== */}
+
+        </div>
 
       </div>
-
-    </div>
-
-
-    {/* =========================
-        CONTACT LAYOUT
-    ========================== */}
-    <div className="grid gap-16 md:grid-cols-2">
-
-
-      {/* =========================
-          LEFT — CONTACT FORM
-      ========================== */}
-      <div>
-
-        <form className="space-y-7">
-
-          {/* Name */}
-          <div>
-
-            <label
-              htmlFor="name"
-              className="mb-3 block text-sm font-medium uppercase tracking-[0.2em] text-gray-400"
-            >
-              Name
-            </label>
-
-            <input
-              id="name"
-              type="text"
-              placeholder="Your name"
-              className="w-full border-b border-white/20 bg-transparent px-0 py-4 text-white outline-none transition placeholder:text-gray-600 focus:border-purple-400"
-            />
-
-          </div>
-
-
-          {/* Email */}
-          <div>
-
-            <label
-              htmlFor="email"
-              className="mb-3 block text-sm font-medium uppercase tracking-[0.2em] text-gray-400"
-            >
-              Email
-            </label>
-
-            <input
-              id="email"
-              type="email"
-              placeholder="your@email.com"
-              className="w-full border-b border-white/20 bg-transparent px-0 py-4 text-white outline-none transition placeholder:text-gray-600 focus:border-purple-400"
-            />
-
-          </div>
-
-
-          {/* Message */}
-          <div>
-
-            <label
-              htmlFor="message"
-              className="mb-3 block text-sm font-medium uppercase tracking-[0.2em] text-gray-400"
-            >
-              Message
-            </label>
-
-            <textarea
-              id="message"
-              rows={5}
-              placeholder="Tell me about your project..."
-              className="w-full resize-none border-b border-white/20 bg-transparent px-0 py-4 text-white outline-none transition placeholder:text-gray-600 focus:border-purple-400"
-            />
-
-          </div>
-
-
-          {/* Send button */}
-          <button
-            type="submit"
-            className="mt-4 rounded-full bg-white px-8 py-4 text-sm font-medium text-black transition hover:-translate-y-1 hover:bg-purple-400"
-          >
-            Send Message
-          </button>
-
-        </form>
-
-      </div>
-
-
-      {/* =========================
-          RIGHT — SOCIAL LINKS
-      ========================== */}
-
-    </div>
-
-  </div>
-</section>
+    </section>
 {/* Footer */}
 <div className="absolute bottom-6 left-0 w-full text-center">
   <p className="text-xs tracking-wide text-gray-600">

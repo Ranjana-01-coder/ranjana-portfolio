@@ -34,7 +34,7 @@ export async function GET() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        Authorization: `Bearer ${process.env.github_token}`,
       },
       body: JSON.stringify({
         query,
