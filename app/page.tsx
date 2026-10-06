@@ -222,6 +222,10 @@ useEffect(() => {
                   </div>
 
                   <div className="h-7">
+                    FreeLancer
+                  </div>
+
+                  <div className="h-7">
                     Cloud & DevOps
                   </div>
 
@@ -1127,7 +1131,7 @@ useEffect(() => {
             {/* =========================
                 PAGE 7 — ACHIEVEMENTS
             ========================== */}
-            <section
+<section
   id="achievements"
   className="relative flex min-h-screen scroll-mt-0 items-center overflow-hidden bg-black px-6 py-32 lg:px-16"
 >
@@ -1144,17 +1148,17 @@ useEffect(() => {
     {/* Certificates */}
     <div className="mt-16 grid gap-8 md:grid-cols-2">
 
-      {/* NPTEL */}
+      {/* VDart Internship */}
       <div className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-purple-400/40">
         <a
-          href="/projects/Nptel-SoftSkills.png"
+          href="/projects/VDart Intern.png"
           target="_blank"
           rel="noopener noreferrer"
           className="relative block h-56 overflow-hidden bg-black"
         >
           <img
-            src="/projects/Nptel-SoftSkills.png"
-            alt="NPTEL Soft Skills Development Certificate"
+            src="/projects/VDart Intern.png"
+            alt="VDart Internship Certificate"
             className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
           />
 
@@ -1167,11 +1171,11 @@ useEffect(() => {
 
         <div className="p-6">
           <h3 className="text-lg font-semibold text-white">
-            NPTEL – Soft Skills Development
+            VDart Internship
           </h3>
 
           <p className="mt-2 text-sm text-gray-400">
-            NPTEL Certification
+            Internship Certificate
           </p>
         </div>
       </div>
@@ -1304,9 +1308,42 @@ useEffect(() => {
         </div>
       </div>
 
+      {/* NPTEL */}
+      <div className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-purple-400/40">
+        <a
+          href="/projects/Nptel-SoftSkills.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative block h-56 overflow-hidden bg-black"
+        >
+          <img
+            src="/projects/Nptel-SoftSkills.png"
+            alt="NPTEL Soft Skills Development Certificate"
+            className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
+          />
+
+          <div className="absolute inset-0 flex items-end justify-center bg-black/0 pb-5 transition-all duration-300 group-hover:bg-black/50">
+            <span className="translate-y-4 rounded-full border border-purple-400/40 bg-purple-500/20 px-6 py-3 text-sm font-medium text-white opacity-0 backdrop-blur-md transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+              View Certificate
+            </span>
+          </div>
+        </a>
+
+        <div className="p-6">
+          <h3 className="text-lg font-semibold text-white">
+            NPTEL – Soft Skills Development
+          </h3>
+
+          <p className="mt-2 text-sm text-gray-400">
+            NPTEL Certification
+          </p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
+
 
 
             {/* =========================
