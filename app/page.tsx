@@ -587,7 +587,6 @@ useEffect(() => {
 
     {/* Heading */}
     <div className="mb-14">
-
       <h2 className="mt-4 text-4xl font-bold tracking-tight text-white md:text-6xl">
         Things I've built.
       </h2>
@@ -663,7 +662,65 @@ useEffect(() => {
 
 
       {/* =========================
-          PROJECT 02 — AGROSENSE
+          PROJECT 02 — PORTFOLIO
+      ========================== */}
+      <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group block"
+      >
+        {/* Website Preview */}
+        <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#111] transition-all duration-500 group-hover:-translate-y-1 group-hover:border-purple-400/40">
+
+          <img
+            src="/projects/Personal Portfolio.png"
+            alt="Personal portfolio project preview"
+            className="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+          />
+
+          {/* Hover overlay */}
+          <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-all duration-500 group-hover:bg-black/40">
+            <span className="rounded-full bg-white px-6 py-3 text-sm font-medium text-black opacity-0 transition-all duration-500 group-hover:opacity-100">
+              View Project ↗
+            </span>
+          </div>
+
+        </div>
+
+
+        {/* Project information */}
+        <div className="mt-5 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+
+          <div>
+            <p className="text-xs uppercase tracking-[0.25em] text-purple-400">
+              02 — Personal Portfolio
+            </p>
+
+            <h3 className="mt-2 text-2xl font-semibold text-white md:text-3xl">
+              Personal Portfolio
+            </h3>
+
+            <p className="mt-2 max-w-xl text-gray-400">
+              A modern interactive portfolio designed and developed from scratch to showcase my work, skills, and projects.
+            </p>
+          </div>
+
+          <div className="flex gap-2 text-xs text-gray-500">
+            <span>JavaScript</span>
+            <span>•</span>
+            <span>CSS</span>
+            <span>•</span>
+            <span>TSX</span>
+          </div>
+
+        </div>
+
+      </a>
+
+
+      {/* =========================
+          PROJECT 03 — AGROSENSE
       ========================== */}
       <a
         href="https://agro-sense-flax.vercel.app/dashboard"
@@ -695,7 +752,7 @@ useEffect(() => {
 
           <div>
             <p className="text-xs uppercase tracking-[0.25em] text-purple-400">
-              02 — AgroSense
+              03 — AgroSense
             </p>
 
             <h3 className="mt-2 text-2xl font-semibold text-white md:text-3xl">
@@ -718,6 +775,7 @@ useEffect(() => {
         </div>
 
       </a>
+
 
     </div>
 
@@ -1311,14 +1369,14 @@ useEffect(() => {
       {/* NPTEL - Soft Skills - Second Certificate */}
       <div className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-purple-400/40">
         <a
-          href="/projects/Nptel-SoftSkills Development.png"
+          href="/projects/Nptel-SoftSkill Development.png"
           target="_blank"
           rel="noopener noreferrer"
           className="relative block h-56 overflow-hidden bg-black"
         >
           <img
-            src="/projects/Nptel-SoftSkills Development.png"
-            alt="NPTEL Soft Skills Development Certificate"
+            src="/projects/Nptel-SoftSkill Development.png"
+            alt="NPTEL Soft Skill Development Certificate"
             className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
           />
 
@@ -1331,7 +1389,7 @@ useEffect(() => {
 
         <div className="p-6">
           <h3 className="text-lg font-semibold text-white">
-            NPTEL – Soft Skills Development
+            NPTEL – Soft Skill Development
           </h3>
 
           <p className="mt-2 text-sm text-gray-400">
