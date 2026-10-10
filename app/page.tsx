@@ -1159,8 +1159,9 @@ useEffect(() => {
             <div className="flex flex-wrap gap-3">
               {[
                 { name: "AWS", icon: FaAws },
-                { name: "Amazon EC2", icon: FaAws },
                 { name: "Amazon S3", icon: FaAws },
+                { name: "Amazon EC2", icon: FaAws },
+                { name: "Amazon IAM", icon: FaAws },
                 { name: "DevOps", icon: null },
                 { name: "Docker", icon: SiDocker },
                 { name: "Jenkins", icon: SiJenkins },
