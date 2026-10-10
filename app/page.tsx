@@ -1270,38 +1270,6 @@ useEffect(() => {
         </div>
       </div>
 
-      {/* AWS Lambda */}
-      <div className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-purple-400/40">
-        <a
-          href="/projects/Aws-Lambda.png"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="relative block h-56 overflow-hidden bg-black"
-        >
-          <img
-            src="/projects/Aws-Lambda.png"
-            alt="AWS Lambda Certificate"
-            className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
-          />
-
-          <div className="absolute inset-0 flex items-end justify-center bg-black/0 pb-5 transition-all duration-300 group-hover:bg-black/50">
-            <span className="translate-y-4 rounded-full border border-purple-400/40 bg-purple-500/20 px-6 py-3 text-sm font-medium text-white opacity-0 backdrop-blur-md transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-              View Certificate
-            </span>
-          </div>
-        </a>
-
-        <div className="p-6">
-          <h3 className="text-lg font-semibold text-white">
-            AWS Lambda
-          </h3>
-
-          <p className="mt-2 text-sm text-gray-400">
-            AWS Certification
-          </p>
-        </div>
-      </div>
-
       {/* AWS EC2 */}
       <div className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-purple-400/40">
         <a
@@ -1326,6 +1294,70 @@ useEffect(() => {
         <div className="p-6">
           <h3 className="text-lg font-semibold text-white">
             AWS EC2
+          </h3>
+
+          <p className="mt-2 text-sm text-gray-400">
+            AWS Certification
+          </p>
+        </div>
+      </div>
+
+      {/* AWS IAM */}
+      <div className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-purple-400/40">
+        <a
+          href="/projects/Aws-IAM.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative block h-56 overflow-hidden bg-black"
+        >
+          <img
+            src="/projects/Aws-Lambda.png"
+            alt="AWS IAM Certificate"
+            className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
+          />
+
+          <div className="absolute inset-0 flex items-end justify-center bg-black/0 pb-5 transition-all duration-300 group-hover:bg-black/50">
+            <span className="translate-y-4 rounded-full border border-purple-400/40 bg-purple-500/20 px-6 py-3 text-sm font-medium text-white opacity-0 backdrop-blur-md transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+              View Certificate
+            </span>
+          </div>
+        </a>
+
+        <div className="p-6">
+          <h3 className="text-lg font-semibold text-white">
+            AWS IAM
+          </h3>
+
+          <p className="mt-2 text-sm text-gray-400">
+            AWS Certification
+          </p>
+        </div>
+      </div>
+
+      {/* AWS Lambda */}
+      <div className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-purple-400/40">
+        <a
+          href="/projects/Aws-Lambda.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative block h-56 overflow-hidden bg-black"
+        >
+          <img
+            src="/projects/Aws-Lambda.png"
+            alt="AWS Lambda Certificate"
+            className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
+          />
+
+          <div className="absolute inset-0 flex items-end justify-center bg-black/0 pb-5 transition-all duration-300 group-hover:bg-black/50">
+            <span className="translate-y-4 rounded-full border border-purple-400/40 bg-purple-500/20 px-6 py-3 text-sm font-medium text-white opacity-0 backdrop-blur-md transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+              View Certificate
+            </span>
+          </div>
+        </a>
+
+        <div className="p-6">
+          <h3 className="text-lg font-semibold text-white">
+            AWS Lambda
           </h3>
 
           <p className="mt-2 text-sm text-gray-400">
@@ -1366,7 +1398,7 @@ useEffect(() => {
         </div>
       </div>
 
-      {/* NPTEL - Soft Skills - Second Certificate */}
+      {/* NPTEL - Soft Skills */}
       <div className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-purple-400/40">
         <a
           href="/projects/Nptel-SoftSkill Development.png"
@@ -1398,7 +1430,7 @@ useEffect(() => {
         </div>
       </div>
 
-      {/* NPTEL - Soft Skills - Original Certificate */}
+      {/* NPTEL - Soft Skills */}
       <div className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-md transition-all duration-300 hover:-translate-y-2 hover:border-purple-400/40">
         <a
           href="/projects/Nptel - SoftSkills.png"
