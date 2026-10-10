@@ -507,7 +507,7 @@ useEffect(() => {
       </div>
 
       <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:border-purple-400/40">
-        <div className="text-4xl font-bold text-white">4+</div>
+        <div className="text-4xl font-bold text-white">5+</div>
         <p className="mt-2 text-sm text-gray-400">
           Projects Built
         </p>
@@ -718,9 +718,63 @@ useEffect(() => {
 
       </a>
 
+      {/* ==============================
+          PROJECT 03 — HINDI WITH GEETHA
+      ================================== */}
+      <a
+        href=""
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group block"
+      >
+        {/* Website Preview */}
+        <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#111] transition-all duration-500 group-hover:-translate-y-1 group-hover:border-purple-400/40">
+
+          <img
+            src="/projects/Hindi with Geetha.png"
+            alt="Hindi with Geetha educational website preview"
+            className="h-auto w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+          />
+
+          {/* Hover overlay */}
+          <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-all duration-500 group-hover:bg-black/40">
+            <span className="rounded-full bg-white px-6 py-3 text-sm font-medium text-black opacity-0 transition-all duration-500 group-hover:opacity-100">
+              Coming Soon !!
+            </span>
+          </div>
+        </div>
+
+        {/* Project information */}
+        <div className="mt-5 flex flex-col gap-3">
+          <div>
+            <p className="text-xs uppercase tracking-[0.25em] text-purple-400">
+              03 — Educational Web Development
+            </p>
+
+            <h3 className="mt-2 text-2xl font-semibold text-white md:text-3xl">
+              Hindi with Geetha
+            </h3>
+
+            <p className="mt-2 max-w-xl text-gray-400">
+              An interactive educational website designed to make Hindi learning
+              more accessible through a clean interface, engaging learning features,
+              and responsive design.
+            </p>
+          </div>
+
+          <div className="mt-1 flex flex-wrap gap-2 text-xs text-gray-500">
+            <span>React</span>
+            <span>•</span>
+            <span>TypeScript</span>
+            <span>•</span>
+            <span>Tailwind CSS</span>
+          </div>
+        </div>
+      </a>
+
 
       {/* =========================
-          PROJECT 03 — AGROSENSE
+          PROJECT 04 — AGROSENSE
       ========================== */}
       <a
         href="https://agro-sense-flax.vercel.app/dashboard"
@@ -752,7 +806,7 @@ useEffect(() => {
 
           <div>
             <p className="text-xs uppercase tracking-[0.25em] text-purple-400">
-              03 — AgroSense
+              04 — AgroSense
             </p>
 
             <h3 className="mt-2 text-2xl font-semibold text-white md:text-3xl">
